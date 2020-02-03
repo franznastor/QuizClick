@@ -3,7 +3,7 @@ import json
 questions_string = '''
 
 {
-    "Questions":
+    "questions":
     [
         {
             "category" : "True/False",
@@ -43,3 +43,23 @@ questions_string = '''
 }
 
 '''
+
+data = json.loads(questions_string)
+'''The .loads() method converts a JSON string to a Python dictionary'''
+
+#print(data)
+'''Output is a Python dictionary'''
+
+#print(type(data))
+'''Confirms that data is a dict object'''
+
+#for question in data['questions']:
+#    print(question['category'])
+'''Output is all the categories'''
+
+new_data = json.dumps(data, indent=3)
+'''The .dumps() method converts a Python object into a JSON string'''
+
+with open('data.txt', 'w') as outfile:
+    json.dump(data, outfile)
+
