@@ -1,7 +1,6 @@
 Name = input("Enter your username: ")
 print("Hello", Name + "." + " Welcome to Quiz-Click!")
 
-
 score = 0
 for i in question:
     print()
@@ -21,4 +20,5 @@ for i in question:
     checkpoint2 = input("Do you want to quit (Y/N): ")
     if checkpoint2 == "Y":
         break
+
 print("Your final score is: ", score)
