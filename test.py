@@ -1,9 +1,14 @@
 
+
 def main():
-    Name = input("Enter your username: ")
-    print("Hello", Name + "." + " Welcome to Quiz-Click!")
+    qs = {}
+    print("*** Quiz ***\n")
+    name = input("Please enter your name: ").title()
+    print()
+    print("\nWell done {0}, you scored {1} out of {2}.".format(name, quiz(qs), len(qs)))
 
 
+@staticmethod
 def run():
     score = 0
     for i in question:
