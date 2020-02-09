@@ -1,35 +1,47 @@
+import json
+import random
+
+
+def get_questions():
+    questions = []
+    with open("data.txt", mode="r", encoding="utf-8") as my_file:
+        reader = json.reader(my_file)
+        for row in reader:
+            questions.append(row)
+    return questions
+
+
+def ask_questions(question, score):
+    print(question[0])
+    for multi in ask_questions[1:-1]:
+        print("{0:>5}{1}".format("", multi))
+    answer = input("Please select an answer: ")
+    print()
+    if answer == question[-1]:
+        print("Correct!")
+        score += 1
+    else:
+        print("Incorrect! The correct answer was {0}.".format(question[-1]))
+    print()
+    return score
 
 
 def main():
-    qs = {}
-    print("*** Quiz ***\n")
-    name = input("Please enter your name: ").title()
-    print()
-    print("\nWell done {0}, you scored {1} out of {2}.".format(name, quiz(qs), len(qs)))
-
-
-@staticmethod
-def run():
+    Name = input("Enter your username: ")
+    print("Hello", Name + "." + " Welcome to Quiz-Click!")
+    questions = get_questions()
     score = 0
-    for i in question:
-        print()
-        print(i)
-        checkpoint1 = input("Do you want to skip this question (Y/N): ")
-        if checkpoint1 == "Y":
-            continue
-        ans = input("Enter the answer A, B, C, or D: ")
-        if ans == question[i]:
-            print("Correct answer, you got 1 point!")
-            score = score + 1
-            print("Your current score is: ", score)
-        else:
-            print("Wrong answer, you lost 1 point.")
-            score = score - 1
-            print("Your current score is: ", score)
-        checkpoint2 = input("Do you want to quit (Y/N): ")
-        if checkpoint2 == "Y":
-            break
-    print('Your final score is: ', score)
+    print("Welcome to Quiz-Click!")
+    print("==========================")
+    print()
+    print()
+    number = int(input("There are {0} questions - how many would you like in the quiz?"))
+    for next_question in range(number):
+        question = random.choice(questions)
+        score = ask_questions(question, score)
+        questions.remove(question)
+    print("Your final score was {0} out of {1}.".format(score, number))
 
-if __Name__ == "__main__":
+
+if __name__ == "__main__":
     main()
