@@ -60,6 +60,7 @@ data = json.loads(questions_string)
 new_data = json.dumps(data, indent=3)
 '''The .dumps() method converts a Python object into a JSON string'''
 
-with open('data.txt', 'w') as outfile:
-    json.dump(data, outfile)
+
+with open('data.json', 'w', encoding='utf-8') as file:
+    json.dump(new_data, file, ensure_ascii=False, indent=3)
 
