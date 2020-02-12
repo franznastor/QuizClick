@@ -1,0 +1,4 @@
+
+#Dependencies
+
+  - Python 3+. To download, click python.org/downloads/
