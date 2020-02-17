@@ -1,4 +1,7 @@
 import json
+import random
+
+from numpy.core import number
 
 
 def get_input():
@@ -16,7 +19,7 @@ def get_input():
                 print("answer1")
                 print("answer2")
                 ans = input("Select your answer: ")
-                if ans == "answer1" is True or ans == "answer2" is True:
+                if ans == "answer1" == True or ans == "answer2" == True:
                     print("Correct! You receive a point.")
                 else:
                     print("Sorry, your answer is wrong! You do not receive a point.")
@@ -30,7 +33,7 @@ def get_input():
                 print("answer3")
                 print("answer4")
                 ans1 = input("Select your answer: ")
-                if ans1 == "answer1" or ans1 == "answer2" or ans1 == "answer3" or ans1 == "answer4" is True:
+                if ans1 == "answer1" or ans1 == "answer2" or ans1 == "answer3" or ans1 == "answer4" == True:
                     print("Correct! You receive a point.")
                 else:
                     print("Sorry, your answer is wrong! You do not receive a point.")
@@ -44,7 +47,7 @@ def get_input():
                 print("answer3")
                 print("answer4")
                 ans2 = input("Select your answer: ")
-                if ans2 == "answer1" or ans2 == "answer2" or ans2 == "answer3" or ans2 == "answer4" is True:
+                if ans2 == "answer1" or ans2 == "answer2" or ans2 == "answer3" or ans2 == "answer4" == True:
                     print("Correct! You receive a point.")
                 else:
                     print("Sorry, your answer is wrong! You do not receive a point.")
